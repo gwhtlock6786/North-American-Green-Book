@@ -1,0 +1,67 @@
+body {
+    background: #56ab2f;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #a8e063, #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    font-family: 'Indie Flower', cursive;
+
+}
+
+.jumbotron {
+
+    background: none;
+    text-align: center;
+    padding-bottom: 0%;
+    margin-bottom: 0%;
+
+}
+
+.card {
+    /* background-color: rgba(255,205,145,10); */
+    background-color: clear;
+
+}
+   
+
+.card-body {
+    text-align: center;
+
+    margin: 0 auto;
+    
+}
+
+.container {
+    text-align: center;
+    margin: auto;
+}
+
+hr {
+    
+    border: 5px solid yellow;
+}
+
+.myform {
+    width: 30%;
+    margin: 25px auto;
+    padding-top: 4rem;
+}
+
+.delete-form{
+    display: inline;
+}
+
+.bg-transparent {
+transition: background-color 0.5s;
+}
+
+.bg-dark {
+    transition: background-color 0.5s;
+    background-color: #0f9b0f;
+
+}
+
+.bg-green {
+    transition: background-color 0.5s;
+    background-color: #043004;
+
+}
