@@ -1,0 +1,33 @@
+<%- include("../partials/header") %>
+        <div class="container">
+            <div class="container">
+                <div class="jumbotron">
+                    <h1><%= champion.name %></h1>
+                    <h3><%= champion.professionalTitle %></h3>
+                </div>
+            </div>
+    
+            <hr/>
+    
+            <div class="container">
+                    <div class="col-md-12">
+                        <div class=card>
+                            <img class="img-responsive card-img-top" src="<%= champion.image %>" alt="" width="500", height="500">
+                            <div class="card-body">
+                                <p class="card-text"><%= champion.details %></p>
+                                <p class="card-text text-right"><%= champion.profession %></p>
+    
+                                <a href="#" class="btn btn-primary">Contact Now!!</a>
+                                
+                                <a href="/champions/<%= champion._id %>/edit" class="btn btn-warning">Edit</a>
+                                <form class="delete-form" action="/champions/<%= champion._id %>?_method=DELETE" method="POST">
+                                    <button class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+<%- include("../partials/footer") %>

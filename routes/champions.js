@@ -23,4 +23,20 @@ router.get("/", function(request, response){
     
 });
 
+
+
+
+//*Show Route
+router.get("/:id", function (request,response){
+    
+    Champion.findById(request.params.id, function(error, foundChamp){
+        
+        if(error){
+            console.log("Error occured while trying to access show route. Error = ", error);
+        } else {
+            response.render("champions/show", {champion: foundChamp});
+        }
+    });
+});
+
 module.exports = router;
