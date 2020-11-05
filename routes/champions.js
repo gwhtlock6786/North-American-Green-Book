@@ -23,6 +23,23 @@ router.get("/", function(request, response){
     
 });
 
+//*create route for new Champion 
+router.post("/", function(request, response){
+
+    Champion.create(request.body.champ, function(error , createdChamp){
+        if(error){
+            console.log("Error occured during save of new Champ. \nError =  "+error);
+        } else {
+            response.redirect("/champions");
+        }
+    });
+});
+
+//*New Route
+router.get("/new", function(request, response){
+    response.render("champions/new")
+});
+
 
 
 
