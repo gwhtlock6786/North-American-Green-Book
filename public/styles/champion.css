@@ -1,7 +1,7 @@
 body {
-    background: #56ab2f;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #a8e063, #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /*background: #56ab2f;  /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to right, #a8e063, #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to right, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ **/
 
     font-family: 'Indie Flower', cursive;
 
@@ -51,17 +51,43 @@ hr {
 }
 
 .bg-transparent {
-transition: background-color 0.5s;
+    transition: background-color 0.5s;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
 }
 
 .bg-dark {
     transition: background-color 0.5s;
     background-color: #0f9b0f;
+    
 
 }
 
 .bg-green {
     transition: background-color 0.5s;
-    background-color: #043004;
+    background-color: darkgreen;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
 
 }
+
+#champions {
+    background-color: black;
+}
+
+#champions h3 {
+    font-size: 2.5rem;
+    color: green;
+    font-family: 'Dancing Script', cursive;
+}
+
+#champions h1 {
+    font-size: 4.5rem;
+    font-family: 'Oswald', sans-serif;
+    color:white;
+}
+
+#champions h5 {
+    
+    color: grey;
+}
+
+

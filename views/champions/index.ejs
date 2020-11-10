@@ -3,9 +3,7 @@
 
       <div class="container">
         <div class="jumbotron">
-          <h1>Champions</h1>
-          <h2>These Champions will inspire you to create a new future</h2>
-          <h3>The North America Economic Green Book was created to amplify and assist Corporate America  with promises of inclusion, increased engagement and positioning partnerships to engage underutilized stakeholders and consumers.</h3>
+          <h1>Welcome to the North American Greenbook</h1>
         </div>
 
         <hr/>
@@ -39,26 +37,35 @@
           </div>
       
         
+          <section id="champions">
 
-        <div class="row">
+            <div class="container">
+              <div class="jumbotron">
+                <h3>Champions</h3>
+                <h1>These Champions will inspire you to create a new future</h1>
+                <h5>The North America Economic Green Book was created to amplify and assist Corporate America  with promises of inclusion, increased engagement and positioning partnerships to engage underutilized stakeholders and consumers.</h5>
+              </div>
+            <div class="row">
 
-            <% champions.forEach(function(champ){ %>
+                <% champions.forEach(function(champ){ %>
 
-              <div class="col-lg-4 col-md-6 col-sm-12">
-                <div class="card mx-auto my-5" style="width: 18rem;">
-                  <div class="card-header"> <h5 class="card-title"><%= champ.name %></h5></div>
-                    <img src="<%= champ.image %>" class="card-img-top" alt="..." height="200" width="200">
-                  <div class="card-body">
-                    <a href="/champions/<%= champ.id %>" class="btn btn-primary">Details</a> 
+                  <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card mx-auto my-5" style="width: 18rem;">
+                      <div class="card-header"> <h5 class="card-title"><%= champ.name %></h5></div>
+                        <img src="<%= champ.image %>" class="card-img-top" alt="..." height="200" width="200">
+                      <div class="card-body">
+                        <a href="/champions/<%= champ.id %>" class="btn btn-primary">Details</a> 
+                      </div>
+                    </div>
                   </div>
-                </div>
+
+
+                <% }) %>
+
+
               </div>
 
-
-            <% }) %>
-
-
-          </div>
+        </section>
 
 
        
