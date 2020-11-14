@@ -34,7 +34,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top" id="navBar">
 
         <div class="container">
-            <a class="navbar-brand" href="#"> <i class="fas fa-book"></i> NAGB</a>
+            <a class="navbar-brand" href="/"> <i class="fas fa-book"></i> NAGB</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -43,17 +43,37 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item ">
-                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="/champions">Home</a>
                     </li>
-                    <li class="nav-item ">
+                    <!-- <li class="nav-item ">
                         <a class="nav-link" href="/about">About</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#champions">Champions</a>
+                    </li>
+                    <% if(currentUser){ %>
+                        <% if(currentUser.role === "admin" || currentUser.role === "champion" ) {%>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/champions/new">Add Champion</a>
+                        </li>
+                        <% } %>
+                    <% } %>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+
+             <% if(!currentUser) { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login"><i class="far fa-user"></i> Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/champions">Champions</a>
+                        <a class="nav-link" href="/register"><i class="fas fa-user-plus"></i> Sign up</a>
                     </li>
+                   <% } else { %>
                     <li class="nav-item">
-                        <a class="nav-link" href="/champions/new">Add Champion</a>
+                        <a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
                     </li>
+                    <% } %> 
+                   
                 </ul>
 
             </div>

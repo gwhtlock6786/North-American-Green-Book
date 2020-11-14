@@ -18,11 +18,14 @@
                                 <p class="card-text text-right"><%= champion.profession %></p>
     
                                 <a href="#" class="btn btn-primary">Contact Now!!</a>
-                                
-                                <a href="/champions/<%= champion._id %>/edit" class="btn btn-warning">Edit</a>
-                                <form class="delete-form" action="/champions/<%= champion._id %>?_method=DELETE" method="POST">
-                                    <button class="btn btn-danger">Delete</button>
-                                </form>
+                                <% if(currentUser) { %>
+                                    <% if(champion.author.id.equals(currentUser._id)){ %>
+                                        <a href="/champions/<%= champion._id %>/edit" class="btn btn-warning">Edit</a>
+                                        <form class="delete-form" action="/champions/<%= champion._id %>?_method=DELETE" method="POST">
+                                            <button class="btn btn-danger">Delete</button>
+                                        </form>
+                                    <% } %>
+                                <% } %>
                             </div>
                         </div>
                     </div>

@@ -35,15 +35,17 @@
                   <p>We Lead in Inclusive Innnovation</p>
               </div>
           </div>
+
+          <hr/>
       
         
-          <section id="champions">
+          <section id="champions" class="rounded">
 
             <div class="container">
               <div class="jumbotron">
-                <h3>Champions</h3>
-                <h1>These Champions will inspire you to create a new future</h1>
-                <h5>The North America Economic Green Book was created to amplify and assist Corporate America  with promises of inclusion, increased engagement and positioning partnerships to engage underutilized stakeholders and consumers.</h5>
+                <h3 id="cTitle">Champions</h3>
+                <h1 id="cSub1">These Champions will inspire you to create a new future</h1>
+                <h5 id="cSub2">The North America Economic Green Book was created to amplify and assist Corporate America  with promises of inclusion, increased engagement and positioning partnerships to engage underutilized stakeholders and consumers.</h5>
               </div>
             <div class="row">
 
@@ -53,9 +55,11 @@
                     <div class="card mx-auto my-5" style="width: 18rem;">
                       <div class="card-header"> <h5 class="card-title"><%= champ.name %></h5></div>
                         <img src="<%= champ.image %>" class="card-img-top" alt="..." height="200" width="200">
-                      <div class="card-body">
-                        <a href="/champions/<%= champ.id %>" class="btn btn-primary">Details</a> 
-                      </div>
+                        <% if (currentUser) { %>
+                          <div class="card-body">
+                            <a href="/champions/<%= champ.id %>" class="btn btn-primary">Details</a> 
+                          </div>
+                      <% } %>
                     </div>
                   </div>
 

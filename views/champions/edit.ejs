@@ -3,40 +3,40 @@
 <div class="container formBackground">
     <div class="row text-center">
         <div class="myform">
-            <h1>Welcome New Champion</h1>
-            <h3>Enter your Information Below!!</h3>
+            <h1>Welcome <br><%= champion.name %></h1>
+            <h3>Edit your Information Below!!</h3>
            
 
-            <form action="/champions" method="POST">
+            <form action="/champions/<%= champion._id %>?_method=PUT" method="POST">
 
                 <div class="form-group">
                     <label for="nameForm">Enter your Name</label>
-                    <input class="form-control" type="text" name="name" id="nameForm" placeholder="name">
+                    <input class="form-control" type="text" name="champ[name]" id="nameForm" value="<%= champion.name %>">
                 </div>
                 <div class="form-group">
                     <label for="proForm">Enter your Profession</label>
-                    <input class="form-control" type="text" name="profession" id="proForm" placeholder="profession">
+                    <input class="form-control" type="text" name="champ[profession]" id="proForm" value="<%= champion.profession %>">
                 </div>
                 <!-- Make this a select option drop down that list all professions and also offers an other option that will allow for a typed in response -->
                 <div class="form-group">
                     <label for="proTForm">Enter your Profession</label>
-                    <input class="form-control" type="text" name="professionalTitle" id="proTForm" placeholder="profession">
+                    <input class="form-control" type="text" name="champ[professionalTitle]" id="proTForm" value="<%= champion.professionalTitle %>">
                 </div>
                 <div class="form-group">
                     <label for="imageForm">Enter your Image url</label>
-                    <input  class="form-control" type="text" name="image" id="imageForm" placeholder="image url">
+                    <input  class="form-control" type="text" name="champ[image]" id="imageForm" value="<%= champion.image %>">
                 </div>
                 <div class="form-group">
-                    <label for="detailForm">Describe Yourself</label>
-                    <input  class="form-control" type="text" name="details" id="detailForm" placeholder="describe Yourself!!">
+                    <label for="detailForm">Describe yourself</label>
+                    <input  class="form-control" type="text" name="champ[details]" id="detailForm" value="<%= champion.details %>">
                 </div>
                 <div class="form-group">
                     <label for="emailForm">Enter Email addesss</label>
-                    <input  class="form-control" type="text" name="email" id="detailForm" placeholder="email">
+                    <input  class="form-control" type="text" name="champ[email]" id="detailForm" value="<%= champion.email %>">
                 </div>
                 <div class="form-group">
                     <label for="phoneForm">Enter Contact Number</label>
-                    <input  class="form-control" type="text" name="phone" id="phoneForm" placeholder="phone number">
+                    <input  class="form-control" type="text" name="champ[phone]" id="phoneForm" value="<%= champion.phone %>">
                 </div>
                 <div class="form-group">
                     <button class="btn btn-lg btn-block btn-warning">Submit!</button>

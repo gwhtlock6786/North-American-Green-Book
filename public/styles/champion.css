@@ -42,8 +42,14 @@ hr {
 
 .myform {
     width: 30%;
-    margin: 25px auto;
-    padding-top: 4rem;
+    margin: auto auto;
+    padding-top: 0.5rem;
+}
+
+.formBackground{
+    margin: 100px auto;
+    background-color: darkgreen;
+    color: yellow;
 }
 
 .delete-form{
@@ -57,9 +63,7 @@ hr {
 
 .bg-dark {
     transition: background-color 0.5s;
-    background-color: #0f9b0f;
-    
-
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
 }
 
 .bg-green {

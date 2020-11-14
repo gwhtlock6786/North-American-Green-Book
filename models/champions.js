@@ -5,7 +5,19 @@ let championSchema = new mongoose.Schema({
     profession: String,
     professionalTitle: String,
     image: String,
-    details: String
+    details: String,
+    email: String,
+    phone: String,
+    author: {
+
+        id: {
+           type: mongoose.Schema.Types.ObjectId,
+           ref: "User"
+        },
+        username: String
+  
+      }
+
 });
 
 module.exports = mongoose.model("Champion", championSchema);
