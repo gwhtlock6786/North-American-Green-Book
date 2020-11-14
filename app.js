@@ -58,6 +58,7 @@ app.use(function(request, response, next){
 
 
 
+
 //*Route calls
 app.use("/", indexRoutes);
 app.use("/champions", championRoutes);

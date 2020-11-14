@@ -19,7 +19,7 @@
     
                                 <a href="#" class="btn btn-primary">Contact Now!!</a>
                                 <% if(currentUser) { %>
-                                    <% if(champion.author.id.equals(currentUser._id)){ %>
+                                    <% if(champion.author.id.equals(currentUser._id) || currentUser.role === "admin"){ %>
                                         <a href="/champions/<%= champion._id %>/edit" class="btn btn-warning">Edit</a>
                                         <form class="delete-form" action="/champions/<%= champion._id %>?_method=DELETE" method="POST">
                                             <button class="btn btn-danger">Delete</button>

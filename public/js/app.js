@@ -3,11 +3,11 @@ var myNav = document.getElementById('navBar');
 window.onscroll = function () { 
     "use strict";
     if (document.body.scrollTop >= 50 || document.documentElement.scrollTop >= 50) {
-        myNav.classList.add("navbar-dark" ,"bg-green");
-        myNav.classList.remove("navbar-light","bg-transparent");
+        myNav.classList.add("bg-green");
+        myNav.classList.remove("bg-dark");
     } 
     else {
-        myNav.classList.add("navbar-light", "bg-transparent");
-        myNav.classList.remove("navbar-dark","bg-green");
+        myNav.classList.add("bg-dark");
+        myNav.classList.remove("bg-green");
     }
 };

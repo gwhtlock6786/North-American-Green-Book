@@ -1,12 +1,108 @@
 
-      <%- include("../partials/header") %>
+      <html>
+        <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <title>B-Diversity</title>
+            <meta name="description" content="">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <!-- Boostrap and personal CSS links -->
+        <link rel="stylesheet" href="/styles/bootstrap.css">
+        <link rel="stylesheet" href="/styles/champion.css">
+    
+    
+        <!-- Font awesome icon link -->
+        <script src="https://kit.fontawesome.com/4790c43d83.js" crossorigin="anonymous"></script>
+    
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+        
+    
+       
+        
+    
+    </head>
+     
+    <body> 
+        
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="navBar">
+    
+            <div class="container">
+                <a class="navbar-brand" href="/"> <i class="fas fa-book"></i> NAGB</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/champions">Home</a>
+                        </li>
+                        <!-- <li class="nav-item ">
+                            <a class="nav-link" href="/about">About</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#champions">Champions</a>
+                        </li>
+                        <% if(currentUser){ %>
+                            <% if(currentUser.role === "admin" || currentUser.role === "champion" ) {%>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/champions/new">Add Champion</a>
+                            </li>
+                            <% } %>
+                        <% } %>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+    
+                 <% if(!currentUser) { %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login"><i class="far fa-user"></i> Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/register"><i class="fas fa-user-plus"></i> Sign up</a>
+                        </li>
+                       <% } else { %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </li>
+                        <% } %> 
+                       
+                    </ul>
+    
+                </div>
+    
+            </div>
+        </nav>
+        <script src="/js/app.js"></script>
 
       <div class="container">
         <div class="jumbotron">
           <h1>Welcome to the North American Greenbook</h1>
         </div>
-
         <hr/>
+
+        <section id="intoParagraph" class="rounded">
+
+            <div class="jumbotron">
+              <h1>WHAT IF THE OPPORTUNITIES FOR DIVERSITY,INCLUSION, AND EQUITY WERE RIGHT AT YOUR FINGERTIPS?</h1>
+            </div>
+
+             <div id=""class="rounded">
+              <p> With 2020 ushering tremendous challenges to our world health, economy and a renewed cultural awakening in our nation's understanding, we have assembled the North American Economic Green Book (NAEGB). NAEGB is a dedicated platform for intersecting with the Best of the Best in business.</p>
+
+            
+              <p>For the first time in our history that the country is moving toward a national desire to be more inclusive and integrate diversity into business and commerce.</p>
+
+              <p>This is an members’ only website where people connect, get inspired and find hit-the-ground- running solutions to global diversity and economic success.  </p>
+            </div>
+
+        </section>
+
+
+        <hr id="mid"/>
       
           <div class="row justify-content-center">
               <div class="col-lg-2 col-md-6 col-sm-lg">
@@ -55,11 +151,11 @@
                     <div class="card mx-auto my-5" style="width: 18rem;">
                       <div class="card-header"> <h5 class="card-title"><%= champ.name %></h5></div>
                         <img src="<%= champ.image %>" class="card-img-top" alt="..." height="200" width="200">
-                        <% if (currentUser) { %>
+                       
                           <div class="card-body">
                             <a href="/champions/<%= champ.id %>" class="btn btn-primary">Details</a> 
                           </div>
-                      <% } %>
+                     
                     </div>
                   </div>
 

@@ -1,7 +1,8 @@
-const express   = require("express"),
-      router    = express.Router(),
-      Champion  = require("../models/champions"),
-      passport  = require("passport");
+const express    = require("express"),
+      router     = express.Router(),
+      Champion   = require("../models/champions"),
+      passport   = require("passport"),
+      middleware = require("../middleware");
 
 
 
@@ -22,7 +23,7 @@ router.get("/", function(request, response){
 });
 
 //*create route for new Champion 
-router.post("/", function(request, response){
+router.post("/", middleware.isLoggedIn, function(request, response){
     let name = request.body.name;
     let profession = request.body.profession;
     let profT = request.body.professionalTitle;
@@ -69,7 +70,7 @@ router.get("/:id", function (request,response){
 
 
 //*Edit route
-router.get("/:id/edit", function(request, response){
+router.get("/:id/edit", middleware.checkAccountOwnership, function(request, response){
 
     Champion.findById(request.params.id, function(error, foundChamp){
 
@@ -83,7 +84,7 @@ router.get("/:id/edit", function(request, response){
 
 
 //*Update Route
-router.put("/:id", function(request, response){
+router.put("/:id", middleware.checkAccountOwnership, function(request, response){
 
     Champion.findByIdAndUpdate(request.params.id, request.body.champ, function(error, updatedChamp){
         if(error){
@@ -97,7 +98,7 @@ router.put("/:id", function(request, response){
 
 
   //*Destory route
-  router.delete("/:id", function(request, response){
+  router.delete("/:id", middleware.checkAccountOwnership, function(request, response){
 
     Champion.findByIdAndRemove(request.params.id, function(error){
         if(error){
