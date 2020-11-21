@@ -79,25 +79,42 @@
         <script src="/js/app.js"></script>
 
       <div class="container">
-        <div class="jumbotron">
-          <h1>Welcome to the North American Greenbook</h1>
+
+        <div class="container-fluid mt-5">
+          <div class="jumbotron">
+            <h1>Welcome to the North American Greenbook</h1>
+          </div>
         </div>
         <hr/>
 
         <section id="intoParagraph" class="rounded">
 
-            <div class="jumbotron">
-              <h1>WHAT IF THE OPPORTUNITIES FOR DIVERSITY,INCLUSION, AND EQUITY WERE RIGHT AT YOUR FINGERTIPS?</h1>
+          <div class="row align-items-center rounded" id="intoPart1">
+            <div class="col-md-12">
+              <div class="jumbotron">
+                <h1>WHAT IF THE OPPORTUNITIES FOR DIVERSITY,INCLUSION, AND EQUITY WERE RIGHT AT YOUR FINGERTIPS?</h1>
+              </div>
             </div>
+          </div>
 
-             <div id=""class="rounded">
-              <p> With 2020 ushering tremendous challenges to our world health, economy and a renewed cultural awakening in our nation's understanding, we have assembled the North American Economic Green Book (NAEGB). NAEGB is a dedicated platform for intersecting with the Best of the Best in business.</p>
-
-            
-              <p>For the first time in our history that the country is moving toward a national desire to be more inclusive and integrate diversity into business and commerce.</p>
-
-              <p>This is an members’ only website where people connect, get inspired and find hit-the-ground- running solutions to global diversity and economic success.  </p>
+          <div class="row justify-content-end rounded-circle">
+            <div class="col-md-12">
+              <div class="jumbotron">
+                <div id=""class="rounded-circle">
+                  <p> With 2020 ushering tremendous challenges to our world health, economy and a renewed cultural awakening in our nation's understanding, we have assembled the North American Economic Green Book (NAEGB). NAEGB is a dedicated platform for intersecting with the Best of the Best in business.</p>
+    
+                
+                  <p>For the first time in our history that the country is moving toward a national desire to be more inclusive and integrate diversity into business and commerce.</p>
+    
+                  <p>This is an members’ only website where people connect, get inspired and find hit-the-ground- running solutions to global diversity and economic success.  </p>
+                </div>
+              </div>
             </div>
+          </div>
+
+           
+
+             
 
         </section>
 
@@ -141,21 +158,20 @@
               <div class="jumbotron">
                 <h3 id="cTitle">Champions</h3>
                 <h1 id="cSub1">These Champions will inspire you to create a new future</h1>
-                <h5 id="cSub2">The North America Economic Green Book was created to amplify and assist Corporate America  with promises of inclusion, increased engagement and positioning partnerships to engage underutilized stakeholders and consumers.</h5>
+                <h5 id="cSub2">The North American Green Book was created to amplify and assist Corporate America  with promises of inclusion, increased engagement and positioning partnerships to engage underutilized stakeholders and consumers.</h5>
               </div>
             <div class="row">
 
                 <% champions.forEach(function(champ){ %>
 
                   <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card mx-auto my-5" style="width: 18rem;">
-                      <div class="card-header"> <h5 class="card-title"><%= champ.name %></h5></div>
-                        <img src="<%= champ.image %>" class="card-img-top" alt="..." height="200" width="200">
-                       
-                          <div class="card-body">
-                            <a href="/champions/<%= champ.id %>" class="btn btn-primary">Details</a> 
-                          </div>
-                     
+                    <div class="card mx-auto my-5 bg-transparent" style="width: 18rem;">
+                      <div class="card-header" id="champName"> 
+                        <h5 class="card-title" ><%= champ.name %></h5>
+                      </div>
+                      <a href="/champions/<%= champ.id %>">
+                        <img src="<%= champ.image %>" class="card-img-top rounded-circle" alt="..." height="200" width="200">
+                      </a> 
                     </div>
                   </div>
 
